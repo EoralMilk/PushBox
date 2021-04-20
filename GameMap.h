@@ -19,6 +19,7 @@ public:
     void PaintMap(QPainter* mMapPainter);
     MoveElement Collision(MoveElement move,int xpos,int ypos);
     MoveElement CollisionTool(MoveElement move,int x, int y,int x2, int y2);
+    bool CheckWin();
     int mRow;
     int mCol;
 //    int pXPos;

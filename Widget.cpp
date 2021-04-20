@@ -81,4 +81,8 @@ void Widget::keyPressEvent(QKeyEvent* event){
             break;
         }
     }
+    if(mMap->CheckWin()){
+        QMessageBox::information(this,"完成","你成功了");
+        close();
+    }
 }

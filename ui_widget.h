@@ -10,6 +10,7 @@
 #define UI_WIDGET_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QWidget>
 
@@ -24,6 +25,9 @@ public:
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
         Widget->resize(800, 600);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8("content/imgs/boxicon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Widget->setWindowIcon(icon);
 
         retranslateUi(Widget);
 
@@ -32,7 +36,7 @@ public:
 
     void retranslateUi(QWidget *Widget)
     {
-        Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
+        Widget->setWindowTitle(QCoreApplication::translate("Widget", "PushBox!", nullptr));
     } // retranslateUi
 
 };

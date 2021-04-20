@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Widget</string>
+   <string>PushBox!</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>content/imgs/boxicon.png</normaloff>content/imgs/boxicon.png</iconset>
   </property>
  </widget>
  <resources/>

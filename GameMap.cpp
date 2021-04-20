@@ -164,6 +164,7 @@ MoveElement GameMap::Collision(MoveElement move,int xpos,int ypos){
     }
 }
 
+
 QString GameMap::SwitchWallType(int ** mapp, int i, int j){
 
     if(   mapp[i-1][j] == Wall
@@ -290,4 +291,15 @@ void GameMap::PaintMap(QPainter* mMapPainter){
             mMapPainter->drawImage(QRect(j*s,i*s,s,s),img);
         }
     }
+}
+
+bool GameMap::CheckWin(){
+    for(int i = 0; i<mRow; i++){
+        for(int j = 0; j <mCol; j++){
+            if(mPMap[i+1][j+1] == Point){
+                return false;
+            }
+        }
+    }
+    return true;
 }
