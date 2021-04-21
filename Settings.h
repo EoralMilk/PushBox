@@ -26,6 +26,7 @@ enum MapElement{
 };
 
 static const QString PATHC = "./content/imgs/";
+static const QString PATHM = "./maps/";
 static const int s = 60;
 
 #endif // SETTINGS_H

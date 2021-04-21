@@ -10,10 +10,10 @@ MapForm::MapForm(QWidget *parent)
     : QWidget(parent)
 {
     mMap = new GameMap(this);
-    QString fileName = QFileDialog::getOpenFileName(this,"打开地图","./maps/","*.txt");
+    QString fileName = QFileDialog::getOpenFileName(this,"打开地图",PATHM,"*.txt");
     if(!mMap->InitByFile(fileName)){
         QMessageBox::warning(this,"警告","无法打开地图文件");
-        close();
+        QApplication::exit();
     }
     mMapPainter = new QPainter(this);
     timer = new QTimer(this);
@@ -27,16 +27,12 @@ MapForm::MapForm(QWidget *parent)
     this->update();
 }
 
-MapForm::~MapForm()
-{
-    delete ui;
-}
 
 void MapForm::paintEvent(QPaintEvent *event){
     mMapPainter->begin(this);
 
     //画背景
-    mMapPainter->drawImage(QRect(0,0,1366,800),QImage("./content/imgs/bg1.png"));
+    mMapPainter->drawImage(QRect(0,0,1366,800),QImage(PATHC + "bg1.png"));
 
     mMap->PaintMap(mMapPainter);
 
