@@ -30,7 +30,6 @@ bool GameMap::InitByFile(QString filename)
     QFile file(filename);
     if(!file.open(QIODevice::ReadOnly))
     {
-
         return false;
     }
 
@@ -66,7 +65,6 @@ bool GameMap::InitByFile(QString filename)
                     if(cols[j-1].toUInt() == Player ||
                        cols[j-1].toUInt() == PlayerInPoint){//确定玩家位置
                         player = new class Player(j,i,this);
-
                     }
                     mPMap[i][j] = cols[j-1].toUInt();
                 }

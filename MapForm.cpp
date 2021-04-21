@@ -13,7 +13,7 @@ MapForm::MapForm(QWidget *parent)
     QString fileName = QFileDialog::getOpenFileName(this,"打开地图",PATHM,"*.txt");
     if(!mMap->InitByFile(fileName)){
         QMessageBox::warning(this,"警告","无法打开地图文件");
-        QApplication::exit();
+        mMap->InitByFile(PATHM + "mapshell.txt");
     }
     mMapPainter = new QPainter(this);
     timer = new QTimer(this);
