@@ -10,18 +10,20 @@ CONFIG += c++11
 
 SOURCES += \
     GameMap.cpp \
+    MainWindow.cpp \
+    MapForm.cpp \
     Player.cpp \
-    main.cpp \
-    Widget.cpp
+    main.cpp
 
 HEADERS += \
     GameMap.h \
+    MainWindow.h \
+    MapForm.h \
     Player.h \
-    Settings.h \
-    Widget.h
+    Settings.h
 
 FORMS += \
-    widget.ui
+    MainWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

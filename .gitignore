@@ -1,0 +1,10 @@
+cmake-build-debug
+.idea
+.vscode
+build
+release
+debug
+*.pro.user
+*.exe
+*.Debug
+*.Release
