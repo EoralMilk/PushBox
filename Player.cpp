@@ -22,5 +22,5 @@ void Player::Move(MoveElement move){
         case Block:
             break;
     }
-    qDebug()<<" XPos:"<<XPos<<" YPos:"<<YPos;
+//    qDebug()<<" XPos:"<<XPos<<" YPos:"<<YPos;
 }

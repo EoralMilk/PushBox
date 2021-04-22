@@ -1,4 +1,4 @@
-﻿#include "MapForm.h"
+#include "MapForm.h"
 #include "ui_widget.h"
 #include <QFileDialog>
 #include <QPainter>
@@ -11,14 +11,13 @@ MapForm::MapForm(QWidget *parent)
 {
     mMap = new GameMap(this);
     QString fileName = QFileDialog::getOpenFileName(this,"打开地图",PATHM,"*.txt");
-    qDebug()<<"PATHM: "<<PATHM;
     if(!mMap->InitByFile(fileName)){
         QMessageBox::warning(this,"警告","无法打开地图文件");
         mMap->InitByFile(PATHM + "mapshell.txt");
     }
     mMapPainter = new QPainter(this);
     timer = new QTimer(this);
-    timer->start(50);
+    timer->start(20);
 
     //定时调用更新函数
     connect(timer,&QTimer::timeout,[this](){this->update();});

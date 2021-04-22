@@ -1,9 +1,9 @@
-﻿#ifndef SETTINGS_H
+#ifndef SETTINGS_H
 #define SETTINGS_H
 
 
 #include <QObject>
-#include <QDebug>
+//#include <QDebug>
 #include <QApplication>
 
 enum MoveElement{
@@ -26,8 +26,8 @@ enum MapElement{
     PlayerInPoint
 };
 
-static const QString PATHC = QApplication::applicationDirPath() + "/content/imgs/";
-static const QString PATHM = QApplication::applicationDirPath() + "/maps/";
+#define PATHC (QApplication::applicationDirPath() + "/content/imgs/")
+#define PATHM (QApplication::applicationDirPath() + "/maps/")
 static const int s = 60;
 
 #endif // SETTINGS_H

@@ -37,16 +37,9 @@ bool GameMap::InitByFile(QString filename)
     QByteArray all =  file.readAll();
     all.replace("\r\n","\n");
     QList<QByteArray> lines = all.split('\n');
-
-    qDebug()<<"lines:"<<lines;
-
-
     mRow = lines.size(); //确定行数
-    qDebug()<<"mRow:"<<mRow;
-
     mPMap = new int*[mRow+2];
     mCol = lines[0].split(',').size(); //确定列数
-    qDebug()<<"mRow:"<<mRow<<"  mCol:"<<mCol;
     for(int i = 0; i<mRow+2; i++){
         // 赋值地图二维数组
         mPMap[i] = new int[mCol+2];
@@ -84,7 +77,7 @@ MoveElement GameMap::CollisionTool(MoveElement move,int x,int y,int x2,int y2)
     //前面是墙
     if(mPMap[y][x] == Wall)
     {
-    qDebug()<<"Block";
+//    qDebug()<<"Block";
     return Block;
     }
     //前面是箱子
@@ -111,7 +104,7 @@ MoveElement GameMap::CollisionTool(MoveElement move,int x,int y,int x2,int y2)
                 mPMap[y][x] = Road;
                 mPMap[y2][x2] = InPoint;
             }
-            qDebug()<<"Up";
+//            qDebug()<<"Up";
             return move;
         }
     }
@@ -139,12 +132,12 @@ MoveElement GameMap::CollisionTool(MoveElement move,int x,int y,int x2,int y2)
                 mPMap[y][x] = Point;
                 mPMap[y2][x2] = InPoint;
             }
-            qDebug()<<"Up";
+//            qDebug()<<"Up";
             return move;
         }
     }
     else {
-            qDebug()<<"Up";
+//            qDebug()<<"Up";
             return move;
         }
     }

@@ -36,7 +36,7 @@ defineTest(AddDir){
     Dirs = $${1}
     for(Dir, Dirs){
         CONFIG(debug, debug|release){
-            DDIR = $${OUT_PWD}/debug
+            DDIR = $${OUT_PWD}
         } else {
             DDIR = $${OUT_PWD}/release
         }
